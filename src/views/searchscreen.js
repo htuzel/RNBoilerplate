@@ -1,10 +1,17 @@
 import * as React from 'react';
 import {View, Text, Button} from 'react-native';
+import BoxCenter from '../components/boxcenter';
+import {Bookmark} from '../components/icons';
+import styled from 'styled-components/native';
 
+
+const Aaa = styled(Bookmark)`
+  color: red;
+`;
 
 function SearchScreen({navigation}) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <BoxCenter>
       <Text>Search screen</Text>
       <Button
         title="Search By Date"
@@ -14,7 +21,8 @@ function SearchScreen({navigation}) {
         title="Search By Screen"
         onPress={() => navigation.navigate('SearchByTutor')}
       />
-    </View>
+      <Aaa></Aaa>
+    </BoxCenter>
   );
 }
 
