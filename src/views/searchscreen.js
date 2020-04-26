@@ -1,29 +1,34 @@
 import * as React from 'react';
 import {View, Text, Button} from 'react-native';
 import BoxCenter from '../components/boxcenter';
-import {Bookmark} from '../components/icons';
+import {Logo} from '../components/icons';
 import styled from 'styled-components/native';
+import { inject, observer } from 'mobx-react';
 
 
-const Aaa = styled(Bookmark)`
-  color: red;
-`;
+@inject('store')
+@observer
 
-function SearchScreen({navigation}) {
-  return (
-    <BoxCenter>
-      <Text>Search screen</Text>
-      <Button
-        title="Search By Date"
-        onPress={() => navigation.navigate('SearchByDate')}
-      />
-      <Button
-        title="Search By Screen"
-        onPress={() => navigation.navigate('SearchByTutor')}
-      />
-      <Aaa></Aaa>
-    </BoxCenter>
-  );
+class SearchScreen extends React.Component {
+  render () {
+    const { navigation } = this.props;
+    const isAuthenticated = this.props.store.isAuthenticated;
+    return (
+      <BoxCenter>
+        <Text>Search screen {isAuthenticated}</Text>
+        <Button
+          title="Search By Date"
+          onPress={() => navigation.navigate('SearchByDate')}
+        />
+        <Button
+          title="Search By Screen"
+          onPress={() => navigation.navigate('SearchByTutor')}
+        />
+        <Logo/>
+        <Text>sada</Text>
+      </BoxCenter>
+    );
+  } 
 }
 
 export default SearchScreen;

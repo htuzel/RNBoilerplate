@@ -34,8 +34,8 @@ function MyTabBar({state, descriptors, navigation}) {
         };
 
         return label === 'Search' ? (
-          <WhiteBox>
-            <CenterButton key={label} onPress={onPress}>
+          <WhiteBox key={label}>
+            <CenterButton onPress={onPress}>
               <Search stroke="white"/>
             </CenterButton>
           </WhiteBox>
