@@ -2,9 +2,8 @@ import appStore from './stores/appStore';
 
 class Store {
   constructor() {
-    this.appStore = new appStore(this);
+    this.store = new appStore();
   }
 }
 
-const store = new Store();
-export default store;
+export default Store;
