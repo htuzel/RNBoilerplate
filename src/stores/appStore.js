@@ -6,10 +6,15 @@ class Store {
   constructor() {
     this.isAuthenticated = false;
     this.apiToken = '';
+    this.isLoading = false;
   }
 
   @action setAuthUser = () => {
     this.isAuthenticated = true;
+  };
+
+  @action setLoading = status => {
+    this.isLoading = status;
   };
 
   @action setApiToken = apiToken => {
