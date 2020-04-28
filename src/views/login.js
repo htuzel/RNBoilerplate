@@ -11,7 +11,7 @@ import {store} from '../store';
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    let { navigation } = props;
+    let {navigation} = props;
     this.state = {
       email: '',
       password: '',
@@ -48,7 +48,7 @@ class Login extends React.Component {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   render() {
     const {navigation} = this.props;
@@ -58,11 +58,13 @@ class Login extends React.Component {
         <Card>
           <Logo />
           <Input
+            autoCapitalize="none"
             label="Your Email"
             value={this.state.email}
             onChangeText={this.emailHandleChange}
           />
           <Input
+            autoCapitalize="none"
             label="Password"
             caption="Should contain at least 8 symbols"
             secureTextEntry={true}
