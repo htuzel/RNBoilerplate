@@ -54,7 +54,7 @@ class Login extends React.Component {
     const {navigation} = this.props;
     const isAuthenticated = this.props.store.isAuthenticated;
     return (
-      <BoxCenter>
+      <BoxCenter behavior="padding">
         <Card>
           <Logo />
           <Input

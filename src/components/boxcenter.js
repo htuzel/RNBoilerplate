@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import { View } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native';
 
-const BoxCenter = styled.View`
+const BoxCenter = styled.KeyboardAvoidingView`
   flex: 1;
   justify-content: center;
   align-items: center;
