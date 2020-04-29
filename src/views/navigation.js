@@ -16,6 +16,11 @@ const Tab = createBottomTabNavigator();
 @inject('store')
 @observer
 class Navigation extends React.Component {
+
+  componentWillMount() {
+    this.props.store.initApp();
+  }
+
   render() {
     return (
       <NavigationContainer>

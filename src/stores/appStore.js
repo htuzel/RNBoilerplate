@@ -1,4 +1,5 @@
 import mobx, {observable, action} from 'mobx';
+import AsyncStorage from '@react-native-community/async-storage';
 
 class Store {
   @observable isAuthenticated = null;
@@ -9,16 +10,23 @@ class Store {
     this.isLoading = false;
   }
 
-  @action setAuthUser = () => {
+  @action initApp = async () => {
+    this.isAuthenticated = await AsyncStorage.getItem('@isAuthenticated');
+    this.apiToken = await AsyncStorage.getItem('@apiToken');
+  };
+
+  @action setAuthUser = async () => {
     this.isAuthenticated = true;
+    await AsyncStorage.setItem('@isAuthenticated', JSON.stringify(true));
   };
 
   @action setLoading = status => {
     this.isLoading = status;
   };
 
-  @action setApiToken = apiToken => {
+  @action setApiToken = async apiToken => {
     this.apiToken = apiToken;
+    await AsyncStorage.setItem('@apiToken', JSON.stringify(apiToken));
   };
 }
 
