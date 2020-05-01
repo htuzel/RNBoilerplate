@@ -1,26 +1,15 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {
-  Input,
-  Card,
-  Button,
-  Icon,
-  Divider
-} from '@ui-kitten/components';
+import {MenuItem, Card, Button, Icon, Menu} from '@ui-kitten/components';
 import {inject, observer} from 'mobx-react';
 import {LogoWhite} from '../components/icons';
 import BoxCenter from '../components/boxcenter';
 
-
 const PersonIcon = props => <Icon {...props} name="person-outline" />;
-
-const BrowserIcon = props => <Icon {...props} name="browser-outline" />;
-
-const ColorPaletteIcon = props => (
-  <Icon {...props} name="color-palette-outline" />
-);
-
-const StarIcon = props => <Icon {...props} name="star" />;
+const ForwardIcon = props => <Icon {...props} name="arrow-ios-forward" />;
+const creditCardIcon = props => <Icon {...props} name="credit-card-outline" />;
+const videoIcon = props => <Icon {...props} name="video-outline" />;
+const shareIcon = props => <Icon {...props} name="share-outline" />;
 
 @inject('store')
 @observer
@@ -44,8 +33,33 @@ class Profile extends React.Component {
     return (
       <>
         <BoxCenter behavior="padding">
-          <LogoWhite style={{marginTop: 30, flex: 1}} />
-          <Card style={{minWidth: '100%', flex: 6, display: 'flex'}}>
+          <LogoWhite style={{marginTop: 80, flex: 1}} />
+          <Card style={{minWidth: '100%', flex: 2, display: 'flex'}}>
+            <Menu
+              style={{backgroundColor: 'white'}}
+              selectedIndex={this.state.selectedIndex}
+              onSelect={index => this.setSelectedIndex(index)}>
+              <MenuItem
+                title="Personal Info"
+                accessoryLeft={PersonIcon}
+                accessoryRight={ForwardIcon}
+              />
+              <MenuItem
+                title="Class Preferences"
+                accessoryLeft={creditCardIcon}
+                accessoryRight={ForwardIcon}
+              />
+              <MenuItem
+                title="Payment Info"
+                accessoryLeft={videoIcon}
+                accessoryRight={ForwardIcon}
+              />
+              <MenuItem
+                title="Invite to Turacoon"
+                accessoryLeft={shareIcon}
+                accessoryRight={ForwardIcon}
+              />
+            </Menu>
             <Button
               onPress={this.logout}
               style={{width: '50%', marginLeft: '25%'}}>
