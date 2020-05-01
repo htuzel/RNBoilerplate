@@ -9,7 +9,7 @@ function Search() {
   return (
     <ReservarionStack.Navigator>
       <ReservarionStack.Screen
-        name="FutureReservations"
+        name="Future Reservations"
         component={Reservations}
       />
       <ReservarionStack.Screen name="Video" component={Video} />

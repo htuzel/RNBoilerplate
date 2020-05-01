@@ -9,9 +9,9 @@ const SearchStack = createStackNavigator();
 function Search() {
   return (
     <SearchStack.Navigator>
-      <SearchStack.Screen name="searchScreen" component={SearchScreen} />
-      <SearchStack.Screen name="SearchByTutor" component={SearchByTutor} />
-      <SearchStack.Screen name="SearchByDate" component={SearchByDate} />
+      <SearchStack.Screen name="Make Reservation" component={SearchScreen} />
+      <SearchStack.Screen name="Search By Tutor" component={SearchByTutor} />
+      <SearchStack.Screen name="Search By Date" component={SearchByDate} />
     </SearchStack.Navigator>
   );
 }

@@ -21,6 +21,7 @@ class Profile extends React.Component {
     };
   }
 
+
   setSelectedIndex = index => {
     this.setState({selectedIndex: index});
   };
@@ -30,6 +31,8 @@ class Profile extends React.Component {
   };
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <>
         <BoxCenter behavior="padding">
@@ -40,6 +43,7 @@ class Profile extends React.Component {
               selectedIndex={this.state.selectedIndex}
               onSelect={index => this.setSelectedIndex(index)}>
               <MenuItem
+                onPress={() => navigation.navigate('SearchByDate')}
                 title="Personal Info"
                 accessoryLeft={PersonIcon}
                 accessoryRight={ForwardIcon}

@@ -7,7 +7,7 @@ import Register from './register';
 import Login from './login';
 import ReservationStack from './reservationstack';
 import MyTabBar from '../components/tab-bar';
-import Profile from './profile';
+import ProfileStack from './profilestack';
 import store from '../stores/appStore';
 import {inject, observer} from 'mobx-react';
 import {View, Text} from 'react-native';
@@ -32,7 +32,7 @@ class Navigation extends React.Component {
             tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen name="Reservations" component={ReservationStack} />
             <Tab.Screen name="Search" component={SearchStack} />
-            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Profile" component={ProfileStack} />
           </Tab.Navigator>
         ) : (
           <Tab.Navigator>
