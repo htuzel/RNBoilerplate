@@ -10,6 +10,8 @@ import MyTabBar from '../components/tab-bar';
 import Profile from './profile';
 import store from '../stores/appStore';
 import {inject, observer} from 'mobx-react';
+import {View, Text} from 'react-native';
+
 
 const Tab = createBottomTabNavigator();
 

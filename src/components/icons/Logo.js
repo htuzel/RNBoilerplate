@@ -11,7 +11,7 @@ function SvgLogo(props) {
       viewBox="0 0 508.9 166.9"
       xmlSpace="preserve"
       width="240"
-      height="240"
+      height="120"
       {...props}>
       <Circle className="logo_svg__st0" cx={106.9} cy={81.4} r={76.5} fill="#00a1e0"/>
       <Path

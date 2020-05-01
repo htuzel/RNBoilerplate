@@ -15,6 +15,13 @@ class Store {
     this.apiToken = await AsyncStorage.getItem('@apiToken');
   };
 
+  @action logout = async () => {
+    this.isAuthenticated = false;
+    this.apiToken = '';
+    await AsyncStorage.setItem('@isAuthenticated', JSON.stringify(false));
+    await AsyncStorage.setItem('@apiToken', JSON.stringify(''));
+  };
+
   @action setAuthUser = async () => {
     this.isAuthenticated = true;
     await AsyncStorage.setItem('@isAuthenticated', JSON.stringify(true));
