@@ -43,7 +43,7 @@ class Profile extends React.Component {
               selectedIndex={this.state.selectedIndex}
               onSelect={index => this.setSelectedIndex(index)}>
               <MenuItem
-                onPress={() => navigation.navigate('SearchByDate')}
+                onPress={() => navigation.navigate('Personal Info')}
                 title="Personal Info"
                 accessoryLeft={PersonIcon}
                 accessoryRight={ForwardIcon}

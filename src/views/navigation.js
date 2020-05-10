@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 @observer
 class Navigation extends React.Component {
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.store.initApp();
   }
 

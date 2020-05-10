@@ -94,7 +94,7 @@ class Login extends React.Component {
             <Input
               autoCapitalize="none"
               label="Your Email"
-              value={this.state.email}
+              value={this.state.email.data}
               onChangeText={this.emailHandleChange}
               status={this.state.email.error ? 'danger' : 'basic'}
               caption={this.state.email.error}
@@ -104,9 +104,9 @@ class Login extends React.Component {
               label="Password"
               caption="Should contain at least 6 characters"
               secureTextEntry={true}
-              status={this.state.email.error ? 'danger' : 'basic'}
+              status={this.state.password.error ? 'danger' : 'basic'}
               onChangeText={this.passwordHandleChange}
-              value={this.state.password}
+              value={this.state.password.data}
               minLength={6}
             />
             <Button onPress={this.submitForm} style={{marginTop: 15}}>

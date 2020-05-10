@@ -33,7 +33,7 @@ class Store {
 
   @action setApiToken = async apiToken => {
     this.apiToken = apiToken;
-    await AsyncStorage.setItem('@apiToken', JSON.stringify(apiToken));
+    await AsyncStorage.setItem('@apiToken', apiToken);
   };
 }
 
