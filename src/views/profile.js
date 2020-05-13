@@ -49,13 +49,14 @@ class Profile extends React.Component {
                 accessoryRight={ForwardIcon}
               />
               <MenuItem
+                onPress={() => navigation.navigate('Class Preferences')}
+                accessoryLeft={videoIcon}
                 title="Class Preferences"
-                accessoryLeft={creditCardIcon}
                 accessoryRight={ForwardIcon}
               />
               <MenuItem
                 title="Payment Info"
-                accessoryLeft={videoIcon}
+                accessoryLeft={creditCardIcon}
                 accessoryRight={ForwardIcon}
               />
               <MenuItem
